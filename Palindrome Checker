@@ -1,0 +1,33 @@
+#include<iostream>
+#include<cmath>
+using namespace std;
+
+int numreverse(int n)
+{
+    int digit=log10(n)+1;
+    int copy=n;
+    int reversed=0;
+    
+    for(int i=0;i<digit;i++)
+    {
+        int last_digit=n%10;
+        n=n/10;
+        reversed+=pow(10,digit-i-1)*last_digit;
+        
+    }
+    return reversed;
+}
+
+int main()
+{
+    int n;
+    cout<<"Enter the number to be checked"<<endl;
+    cin>>n;
+    if(n==numreverse(n))
+    cout<<"Palindrome";
+    else
+    cout<<"Not a Palindrome";
+
+    return 0;
+    
+}
